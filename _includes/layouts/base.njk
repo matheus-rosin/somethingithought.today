@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} &times; {{ metadata.title }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,500;9..40,700&family=Vollkorn:ital,wght@0,500;0,700;1,500;1,700&family=Young+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="https://unpkg.com/prism-themes@1.9.0/themes/prism-nord.min.css">
+  <meta name="theme-color" content="#2a2a2a" />
+  <meta name="description" content="{{ description }}">
+  <script type="application/ld+json">{{ schemaOrg | dump | safe }}</script>
+</head>
+<body>
+  <header>
+    <a href="/">{{ metadata.title }}</a>
+  </header>
+
+  {{ content | safe }}
+
+  <footer>
+    <span>Got something to say? Tell me at <b>{{ metadata.email }}</b></span>
+    <span>See it on <a href="https://github.com/matheus-rosin/somethingithought.today" target="_blank">GitHub</a></span>
+  </footer>
+
+  {%- if metadata.env == "production" -%}
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HRV9B54K0B"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-HRV9B54K0B');
+  </script>
+  {%- endif -%}
+</body>
+</html>

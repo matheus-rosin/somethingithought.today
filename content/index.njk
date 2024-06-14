@@ -1,0 +1,31 @@
+---
+layout: layouts/base.njk
+title: Home
+eleventyComputed:
+  description: Hello there! My name is {{ metadata.name }} and this is my blog. Welcome aboard.
+  schemaOrg:
+    '@context': https://schema.org/
+    '@type': Blog
+    '@id': "{{ metadata.url }}"
+    mainEntityOfPage: "{{ metadata.url }}"
+    name: "{{ metadata.title }}"
+---
+<main>
+  <p>Hello there! My name is <strong>{{ metadata.name }}</strong> and this is my blog. Welcome aboard.</p>
+
+  <p>I am a software engineer, but you’ll find both technical and non-technical articles here. My sincere wish is that the ideas I’m looking forward to imparting will be constructive to you.</p>
+
+  <p>If you’re wondering how this is built, check it out in <a href="https://github.com/matheus-rosin/somethingithought.today">its repo</a>. Without further ado, get ready to read and feel free to share. Also, I would love to hear from you on <b>{{ metadata.email }}</b>. See you later!</p>
+</main>
+
+<hr>
+
+<nav id="posts">
+  {%- for post in collections.sortedPosts -%}
+  <a href="{{ post.url }}">
+    <h2>{{ post.data.title }}</h2>
+    <p>{{ post.data.description }}</p>
+    <span>{% readingTime post.content %}&ensp;&times;&ensp;<time datetime="{{ post.data.publishingDate | standardDate }}">{{ post.data.publishingDate | formatDate }}</time></span>
+  </a>
+  {%- endfor -%}
+</nav>

@@ -1,0 +1,41 @@
+---
+layout: layouts/base.njk
+eleventyComputed:
+  schemaOrg:
+    '@context': https://schema.org/
+    '@type': BlogPosting
+    '@id': "{{ metadata.url }}{{ page.url }}"
+    headline: "{{ title }}"
+    name: "{{ title }}"
+    description: "{{ description }}"
+    datePublished: "{{ publishingDate | standardDate }}"
+    author:
+      '@type': Person
+      name: "{{ metadata.name }}"
+      image:
+        '@type': ImageObject
+        url: "{{ metadata.url }}/image/me.jpeg"
+        width: 800
+        height: 800
+    url: "{{ metadata.url }}{{ page.url }}"
+    isPartOf:
+      '@type': Blog
+      '@id': "{{ metadata.url }}"
+      name: "{{ metadata.title }}"
+---
+<article>
+  <h1 id="top">{{ title }}</h1>
+
+  <p>{{ description }}</p>
+
+  <div id="info">{% readingTime %}&ensp;&times;&ensp;<time pubdate datetime="{{ publishingDate | standardDate }}">{{ publishingDate | formatDate }}</time></div>
+
+  {{ content | safe }}
+
+</article>
+
+<div id="by">
+  <img src="/image/me.jpeg" alt="{{ metadata.name }}" title="{{ metadata.name }}">
+  <span>by <b>{{ metadata.name }}</b></span>
+  <span><s>Problem Solver</s> Software Engineer</span>
+</div>

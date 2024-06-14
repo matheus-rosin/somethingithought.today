@@ -1,0 +1,14 @@
+{
+  "name": "somethingithought.today",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "NODE_ENV=development npx @11ty/eleventy --serve --port=3000",
+    "build": "NODE_ENV=production npx @11ty/eleventy --output=out"
+  },
+  "dependencies": {
+    "markdown-it-attrs": "^4.1.6",
+    "markdown-it-multimd-table": "^4.2.3",
+    "prismjs": "^1.29.0"
+  }
+}
