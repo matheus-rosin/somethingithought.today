@@ -57,9 +57,12 @@ module.exports = config => {
   })
 
   config.addShortcode('picture', function(imageName, caption) {
+    let { inputPath, outputPath } = this.ctx.environments.page
+    let dest = path.dirname(outputPath)
+    if (!fs.existsSync(dest)) fs.mkdirSync(dest, { recursive: true })
     fs.copyFileSync(
-      path.join(path.dirname(this.ctx.environments.page.inputPath), imageName),
-      path.join(path.dirname(this.ctx.environments.page.outputPath), imageName),
+      path.join(path.dirname(inputPath), imageName),
+      path.join(dest, imageName),
     )
     return `<figure><img loading="lazy" src="${imageName}" alt="${caption}"><figcaption>${md.renderInline(caption)}</figcaption></figure>`
   })
