@@ -14,8 +14,6 @@
   --white: #ececec;
   --white-transparent: #ececec0d;
 
-  --scrollbar-width: (100vw - 100%);
-  --viewport-width: (100vw - var(--scrollbar-width));
   --content-viewport-width: 900px;
   --minimum-horizontal-padding: var(--base-spacing);
   --extra-horizontal-padding: ((var(--viewport-width) - var(--content-viewport-width) - (var(--minimum-horizontal-padding) * 2)) / 2);
@@ -304,7 +302,7 @@ article {
     div {
       display: flex;
       flex-direction: row;
-      width: 100svw;
+      width: var(--viewport-width);
       overflow-x: auto;
       overflow-y: hidden;
       scrollbar-width: none;
