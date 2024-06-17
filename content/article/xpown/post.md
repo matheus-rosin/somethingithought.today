@@ -679,7 +679,7 @@ That guy has something to share with us about it:
 ### Final thoughts
 
 Again, it’s been fun to spend some time getting my head around this, no matter what it is.
-Please let me know what do you think about it.
+Please let me know what you think about it.
 I mean it.
 
 See you in the next one!
