@@ -12,6 +12,17 @@
   <meta name="theme-color" content="#2a2a2a" />
   <meta name="description" content="{{ description }}">
   <script type="application/ld+json">{{ schemaOrg | dump | safe }}</script>
+  <meta property="og:title" content="{{ title }}{%- if "posts" in tags -%}{% else %} &times; {{ metadata.title }}{% endif %}">
+  <meta property="og:type" content="{%- if "posts" in tags -%}article{% else %}blog{%- endif -%}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:image" content="{{ metadata.url }}/image/image.png">
+  <meta property="og:url" content="{{ metadata.url }}{{ page.url }}">
+  <meta property="og:site_name" content="{{ metadata.title }}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="{{ metadata.url }}{{ page.url }}">
+  <meta name="twitter:title" content="{{ title }}{%- if "posts" in tags -%}{% else %} &times; {{ metadata.title }}{% endif %}">
+  <meta name="twitter:description" content="{{ description }}">
+  <meta name="twitter:image" content="{{ metadata.url }}/image/image.png">
 </head>
 <body>
   <header>

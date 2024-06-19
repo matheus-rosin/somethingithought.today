@@ -1,6 +1,8 @@
 ---
 layout: layouts/base.njk
 title: Home
+tags:
+  -
 eleventyComputed:
   description: Hello there! My name is {{ metadata.name }} and this is my blog. Welcome aboard.
   schemaOrg:
@@ -9,6 +11,8 @@ eleventyComputed:
     '@id': "{{ metadata.url }}"
     mainEntityOfPage: "{{ metadata.url }}"
     name: "{{ metadata.title }}"
+    image:
+      - "{{ metadata.url }}/image/image.png"
 ---
 <main>
   <p>Hello there! My name is <strong>{{ metadata.name }}</strong> and this is my blog. Welcome aboard.</p>

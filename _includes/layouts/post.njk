@@ -12,11 +12,8 @@ eleventyComputed:
     author:
       '@type': Person
       name: "{{ metadata.name }}"
-      image:
-        '@type': ImageObject
-        url: "{{ metadata.url }}/image/me.jpeg"
-        width: 800
-        height: 800
+    image:
+      - "{{ metadata.url }}/image/image.png"
     url: "{{ metadata.url }}{{ page.url }}"
     isPartOf:
       '@type': Blog
