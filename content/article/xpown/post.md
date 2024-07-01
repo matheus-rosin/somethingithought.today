@@ -1,5 +1,5 @@
 ---
-title: Did I just discovered a new mathematical formula?
+title: Did I just discover a new mathematical formula?
 description: What a weird way of starting a blog... anyways, please join me in my journey of spending time reasoning about complex stuff I know nothing about for no particular reason.
 publishingDate: 2024-06-14 12:00:00
 ---
